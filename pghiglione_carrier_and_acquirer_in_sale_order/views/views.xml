@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <record id="sale_view_order_tree_add_carrier_acquirer" model="ir.ui.view">
+      <field name="name">sale_view_order_tree_add_carrier_acquirer</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_tree"/>
+      <field name="arch" type="xml">
+          <field name="invoice_status" position="after">
+              <field name="carrier_id" readonly="1"/>
+              <field name="acquirer_id" readonly="1"/>    
+          </field>
+      </field>
+  </record>
+
+
+
+  </data>
+</odoo>
