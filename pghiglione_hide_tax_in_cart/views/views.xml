@@ -6,10 +6,10 @@
       <field name="inherit_id" ref="website_sale.total"/>
       <field name="arch" type="xml">
           <xpath expr="//tr[@id='order_total_untaxed']" position="attributes">
-            <attribute name="attrs">{'invisible': 1}</attribute>
+            <attribute name="attrs">{'invisible': 'True'}</attribute>
           </xpath>
           <xpath expr="//tr[@id='order_total_taxes']" position="attributes">
-            <attribute name="attrs">{'invisible': 1}</attribute>
+            <attribute name="attrs">{'invisible': 'True'}</attribute>
           </xpath>
       </field>
   </record>
