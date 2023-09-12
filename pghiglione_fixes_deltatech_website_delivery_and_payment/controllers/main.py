@@ -10,6 +10,7 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale as Base
 class WebsiteSaleWithMinAmount(Base):
     @route("/shop/carrier_acquirer_check", type="json", auth="public", website=True, sitemap=False)
     def carrier_acquirer_check(self, carrier_id, acquirer_id=None, **kw):
+        debajo_minimo = False
         result = {"status": False, "all_acquirer": True}
         carrier = request.env["delivery.carrier"].sudo().browse(int(carrier_id))
         if acquirer_id is None:
@@ -17,8 +18,7 @@ class WebsiteSaleWithMinAmount(Base):
         if carrier:
             if carrier.amount_min and float(request.website.sale_get_order().amount_total) < carrier.amount_min:
                 # El monto total es menor que el mínimo, por lo que no se permiten opciones de pago
-                result["all_acquirer"] = False
-                acquirer_id = 0
+                debajo_minimo = True
             else:
                 if carrier.acquirer_allowed_ids:
                     result = {
@@ -48,5 +48,7 @@ class WebsiteSaleWithMinAmount(Base):
             label_ids = list(set(order.partner_id.category_id.ids) & set(acquirer.restrict_label_ids.ids))
             if label_ids:
                 result["status"] = False
-
+        if debajo_minimo:
+            result["status"] = False
+            
         return result
