@@ -51,7 +51,7 @@ class WebsiteSaleWithMinAmount(Base):
         if debajo_minimo:
             result = {
                         "status": False,
-                        "acquirer_allowed_ids": False,
+                        "acquirer_allowed_ids": [],
                         "all_acquirer": False,
                     }
 
