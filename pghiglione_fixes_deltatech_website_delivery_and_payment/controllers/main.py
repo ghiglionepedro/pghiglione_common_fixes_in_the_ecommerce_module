@@ -43,7 +43,7 @@ class WebsiteSaleWithMinAmount(Base):
             label_ids = list(set(order.partner_id.category_id.ids) & set(acquirer.restrict_label_ids.ids))
             if label_ids:
                 result["status"] = False
-        if order.amount_total >= carrier.amount_min:
-            result["status"] = False
+            if order.amount_total < carrier.amount_min:
+                result["status"] = False
 
         return result
