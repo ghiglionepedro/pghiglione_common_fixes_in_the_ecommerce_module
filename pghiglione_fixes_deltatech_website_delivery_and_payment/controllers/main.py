@@ -49,6 +49,10 @@ class WebsiteSaleWithMinAmount(Base):
             if label_ids:
                 result["status"] = False
         if debajo_minimo:
-            result["status"] = False
-            
+            result = {
+                        "status": False,
+                        "acquirer_allowed_ids": False,
+                        "all_acquirer": False,
+                    }
+
         return result
