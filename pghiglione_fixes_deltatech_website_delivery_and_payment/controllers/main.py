@@ -17,6 +17,7 @@ class WebsiteSaleWithMinAmount(Base):
         if carrier:
             if carrier.amount_min and request.website.sale_get_order().amount_total < carrier.amount_min:
                 result["status"] = False  # El monto total es menor que el mínimo, por lo que no se permiten opciones de pago
+                acquirer_id = 0
             else:
                 if carrier.acquirer_allowed_ids:
                     result = {
