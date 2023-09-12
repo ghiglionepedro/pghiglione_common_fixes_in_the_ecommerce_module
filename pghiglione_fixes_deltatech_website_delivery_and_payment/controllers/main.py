@@ -12,19 +12,22 @@ class WebsiteSaleWithMinAmount(Base):
     def carrier_acquirer_check(self, carrier_id, acquirer_id=None, **kw):
         result = {"status": False, "all_acquirer": True}
         carrier = request.env["delivery.carrier"].sudo().browse(int(carrier_id))
-        if acquirer_id is None or request.website.sale_get_order().amount_total < carrier.amount_min:
+        if acquirer_id is None:
             acquirer_id = 0
         if carrier:
-            if carrier.acquirer_allowed_ids:
-                result = {
-                    "status": False,
-                    "acquirer_allowed_ids": carrier.acquirer_allowed_ids.ids,
-                    "all_acquirer": False,
-                }
-                if int(acquirer_id) in carrier.acquirer_allowed_ids.ids:
-                    result["status"] = True
+            if carrier.amount_min and request.website.sale_get_order().amount_total < carrier.amount_min:
+                result["status"] = False  # El monto total es menor que el mínimo, por lo que no se permiten opciones de pago
             else:
-                result = {"status": True, "all_acquirer": True}
+                if carrier.acquirer_allowed_ids:
+                    result = {
+                        "status": False,
+                        "acquirer_allowed_ids": carrier.acquirer_allowed_ids.ids,
+                        "all_acquirer": False,
+                    }
+                    if int(acquirer_id) in carrier.acquirer_allowed_ids.ids:
+                        result["status"] = True
+                else:
+                    result = {"status": True, "all_acquirer": True}
 
         if acquirer_id:
 
