@@ -50,7 +50,7 @@ class WebsiteSaleWithMinAmount(Base):
                 result["status"] = False
         if debajo_minimo:
             result = {
-                        "status": True,
+                        "status": False,
                         "acquirer_allowed_ids": False,
                         "all_acquirer": False,
                     }
