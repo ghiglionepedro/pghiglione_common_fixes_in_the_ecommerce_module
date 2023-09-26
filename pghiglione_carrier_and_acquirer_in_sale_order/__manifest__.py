@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale','website_sale'],
+    'depends': ['base','sale','deltatech_website_delivery_and_payment'],
 
     # always loaded
     'data': [
