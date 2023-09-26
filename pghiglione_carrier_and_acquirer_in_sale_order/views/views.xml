@@ -17,7 +17,7 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
       <field name="arch" type="xml">
-          <field name="status" position="after">
+          <field name="state" position="after">
               <field name="carrier_id" readonly="1"/>
               <field name="acquirer_id" readonly="1"/>    
           </field>
