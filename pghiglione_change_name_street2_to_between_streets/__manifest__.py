@@ -9,9 +9,9 @@
     "author": "Ghiglione Pedro Matias",
     "license": "OPL-1",
     "website": "https://quimerasoftware.ar",
-    "depends": ["website_sale"],
+    "depends": ["base"],
     "data": [
-        "views/delivery_view.xml",
+        "views/views.xml",
     ],
     "installable": True,
     "development_status": "Mature",
