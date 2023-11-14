@@ -4,6 +4,7 @@
       <field name="name">website_sale_total_amount_total</field>
       <field name="model">total</field>
       <field name="inherit_id" ref="website_sale.total"/>
+      <field name="priority">100</field>
       <field name="arch" type="xml">
           <xpath expr="//tr[@id='order_total_untaxed']" position="replace">
           </xpath>
