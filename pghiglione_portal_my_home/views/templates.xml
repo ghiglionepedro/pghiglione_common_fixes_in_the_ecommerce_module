@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template name="My Portal Customize" customize_show="True" inherit_id="portal.portal_my_home" >
+  <template id="pghiglione_My_Portal_Customize" name="pghiglione_My Portal Customize" customize_show="True" inherit_id="portal.portal_my_home" >
         <xpath expr="//div[hasclass('o_portal_docs')]" position="replace">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Quotations</t>
