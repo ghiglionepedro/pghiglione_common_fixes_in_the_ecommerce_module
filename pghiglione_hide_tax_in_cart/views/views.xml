@@ -6,5 +6,4 @@
         <tr id="order_total_taxes" position="replace">
         </tr>
       </template>
-    </odoo>
 </odoo>
