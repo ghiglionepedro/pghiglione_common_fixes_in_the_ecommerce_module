@@ -3,7 +3,7 @@
     <template id="website_sale_total_amount_total_hide_tax" inherit_id="website_sale.total">
         <xpath expr="//tr[@id='order_total_untaxed']" position="replace">
         </xpath>
-        <<xpath expr="//tr[@id='order_total_taxes']" position="replace">
+        <xpath expr="//tr[@id='order_total_taxes']" position="replace">
         </xpath>
       </template>
 </odoo>
