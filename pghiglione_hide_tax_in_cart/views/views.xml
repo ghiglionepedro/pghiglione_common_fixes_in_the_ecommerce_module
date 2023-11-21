@@ -1,9 +1,10 @@
 <odoo>
 
-    <template id="website_sale_total_amount_total_hide_tax" name="website_sale_total_amount_total_hide_tax" customize_show="True" inherit_id="website_sale.total">
-          <xpath expr="//tr[@id='order_total_taxes']" position="replace">
-          </xpath>
-  </template>
-
-
+    <template id="website_sale_total_amount_total_hide_tax" inherit_id="website_sale.total">
+        <tr id="order_total_untaxed" position="replace">
+        </tr>
+        <tr id="order_total_taxes" position="replace">
+        </tr>
+      </template>
+    </odoo>
 </odoo>
