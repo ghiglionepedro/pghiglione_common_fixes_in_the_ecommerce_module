@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <template id="pghiglione_My_Portal_Customize" name="pghiglione_My Portal Customize" customize_show="True" inherit_id="portal.portal_my_home" >
-        <xpath expr="//div[hasclass('o_portal_docs')]" position="replace">
+        <xpath expr="//div[hasclass('o_portal_my_home')]" position="replace">
           <div class="o_portal_my_home">
               <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
-                <h3>Documents</h3>
-                <div class="o_portal_docs list-group">
-              </div>
-              <t t-call="portal.portal_docs_entry">
-                  <t t-set="title">Quotations</t>
-                  <t t-set="url" t-value="'/my/quotes'"/>
-                  <t t-set="placeholder_count" t-value="'quotation_count'"/>
-              </t>
-              <t t-call="portal.portal_docs_entry">
-                  <t t-set="title">Sales Orders</t>
-                  <t t-set="url" t-value="'/my/orders'"/>
-                  <t t-set="placeholder_count" t-value="'order_count'"/>
-              </t>
-              <t t-call="portal.portal_docs_entry">
-                  <t t-set="title">Invoices &amp; Bills</t>
-                  <t t-set="url" t-value="'/my/invoices'"/>
-                  <t t-set="placeholder_count" t-value="'invoice_count'"/>
-              </t>
+              <h3>Documents</h3>
+              <div class="o_portal_docs list-group">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Quotations</t>
+                    <t t-set="url" t-value="'/my/quotes'"/>
+                    <t t-set="placeholder_count" t-value="'quotation_count'"/>
+                </t>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Sales Orders</t>
+                    <t t-set="url" t-value="'/my/orders'"/>
+                    <t t-set="placeholder_count" t-value="'order_count'"/>
+                </t>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Invoices &amp; Bills</t>
+                    <t t-set="url" t-value="'/my/invoices'"/>
+                    <t t-set="placeholder_count" t-value="'invoice_count'"/>
+                </t>
             </div>
+          </div>
         </xpath>
     </template>
 </odoo>
