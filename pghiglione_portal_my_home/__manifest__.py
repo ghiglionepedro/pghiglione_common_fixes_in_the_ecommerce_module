@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "pghiglione_my_porta_home",
+    'name': "pghiglione_my_portal_home",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
