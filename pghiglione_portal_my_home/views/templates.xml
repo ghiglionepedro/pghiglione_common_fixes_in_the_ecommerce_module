@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="pghiglione_My_Portal_Customize" name="pghiglione_My Portal Customize" customize_show="True" inherit_id="portal.portal_my_home" priority="50">
+  <template id="pghiglione_My_Portal_Customize" name="pghiglione_My Portal Customize" customize_show="True" inherit_id="portal.portal_my_home" priority="100">
         <xpath expr="//div[hasclass('o_portal_my_home')]" position="replace">
           <div class="o_portal_my_home">
               <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
