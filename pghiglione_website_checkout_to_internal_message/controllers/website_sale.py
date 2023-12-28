@@ -16,7 +16,10 @@ class WebsiteSaleCheckout(WebsiteSale):
             if not channel:
                 channel = request.env['mail.channel'].sudo().create({'name': 'eCommerce'})
             # Crea el mensaje interno
-            message = _("Se ha realizado una nueva orden de venta con referencia: %s") % (order.name)
+            message = f"Se ha realizado una nueva orden de venta con referencia: {order.name}"
+            # ID del usuario odoobot
+            odoobot_user = request.env.ref('base.user_root')
+            odoobot_user_id = odoobot_user.id
             # Envía el mensaje al canal de chat
-            channel.sudo().message_post(body=message, author_id=request.env.user.partner_id.id, message_type='comment', subtype='mail.mt_comment')
+            channel.sudo().message_post(body=message, author_id=odoobot_user_id, message_type='comment')
         return super(WebsiteSaleCheckout, self).shop_payment_confirmation(**post)
